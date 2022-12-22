@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 
 export const AllGroups = () => {
   const [groups, setGroups] = useState<GroupModel[]>();
-
   useEffect(() => {
     axios
       .get<GroupModel[]>("http://localhost:8080/api/artists/", {
@@ -35,15 +34,18 @@ export const AllGroups = () => {
             alignItems="center"
             borderRadius="10px"
             boxShadow="md"
+            
+    
           >
-            <Avatar size="xl" src={group.image} />
-            <Box>
-              <Heading>{group.name}</Heading>
-              <Text>Created: {group.creationDate}</Text>
-            </Box>
+          <Avatar size="xl" src={group.image} />
+          <Box>
+            <Heading>{group.name}</Heading>
+            <Text>Created: {group.creationDate}</Text>
           </Box>
+        </Box>
         </Link>
-      ))}
-    </Box>
+  ))
+}
+    </Box >
   );
 };

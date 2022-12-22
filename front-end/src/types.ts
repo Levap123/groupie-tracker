@@ -20,3 +20,7 @@ export interface Concerts {
     [name: string]: [dates: string[]];
   };
 }
+
+export interface Err{
+  msg: string;
+}

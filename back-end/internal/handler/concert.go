@@ -30,7 +30,7 @@ func (h *Handler) Concert(w http.ResponseWriter, r *http.Request) {
 	}
 	if concert.Id == 0 {
 		h.logger.Err.Printf("not accebtable id - %d", id)
-		webjson.JSONError(w, errors.WebFail(http.StatusNotAcceptable), http.StatusNotAcceptable)
+		webjson.JSONError(w, errors.WebFail(http.StatusNotFound), http.StatusNotFound)
 		return
 	}
 	webjson.SendJSON(w, concert)
